@@ -1,0 +1,147 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.logo_introduce{
+    width:150px;
+}
+.text_res{
+    max-width:100%
+}
+
+.box-shadow{
+    box-shadow:0 4px 8px 0 gray !important;
+}
+.box_web {
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: rgb(145,0,255);
+    background: -moz-linear-gradient(90deg, rgba(145,0,255,1) 0%, rgba(245,4,211,1) 43%, rgba(255,0,99,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(145,0,255,1) 0%, rgba(245,4,211,1) 43%, rgba(255,0,99,1) 100%);
+    background: linear-gradient(90deg, rgba(145,0,255,1) 0%, rgba(245,4,211,1) 43%, rgba(255,0,99,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9100ff",endColorstr="#ff0063",GradientType=1);
+
+}
+    .box_web > a {
+        color: #fff;
+        text-decoration: none;
+    }
+.text-footer {
+    margin-top: 8px !important;
+}
+.whatsup {
+    width: 70px;
+    position: fixed;
+    left: 8px;
+    bottom: 3px;
+}
+.footer_custom {
+    position: fixed;
+    bottom: 0;
+    background-color: purple;
+    color: #fff;
+    width: 100%;
+}
+.intro_box {
+    transition-duration: 500ms;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: rgb(145,0,255);
+    background: -moz-linear-gradient(90deg, rgba(145,0,255,1) 0%, rgba(245,4,211,1) 43%, rgba(255,0,99,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(145,0,255,1) 0%, rgba(245,4,211,1) 43%, rgba(255,0,99,1) 100%);
+    background: linear-gradient(90deg, rgba(145,0,255,1) 0%, rgba(245,4,211,1) 43%, rgba(255,0,99,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9100ff",endColorstr="#ff0063",GradientType=1);
+}
+    .intro_box:hover {
+        color: #000;
+        background: #fff;
+    }
+.chart-container {
+    width: 300px;
+    display: inline-block;
+}
+
+.nav-item:hover {
+    border-bottom: 1px solid #000;
+    color: purple;
+    font-size: 20px;
+}
+.nav-item{
+    transition-duration:300ms;
+}
+.hide {
+    display: none;
+}
+.center {
+    text-align: center;
+}
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a {
+  color: #0077cc;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+.logo{
+    width:70px;
+    max-width:100%;
+
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+   
+    margin-bottom: 60px;
+    direction: rtl;
+    text-align: right !important;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

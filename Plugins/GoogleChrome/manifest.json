@@ -1,0 +1,21 @@
+{
+  "name": "Rizlinko",
+  "description": "With Rizlinko you can generate short link from long links!!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.htm"
+  },
+  "default_icon": {
+    "16": "/images/mipmap-mdpi/ic_launcher.png",
+    "32": "/images/mipmap-hdpi/ic_launcher.png",
+    "48": "/images/mipmap-xxhdpi/ic_launcher.png",
+    "128": "/images/mipmap-xxxhdpi/ic_launcher.png"
+  },
+  "icons": {
+    "16": "/images/mipmap-mdpi/ic_launcher.png",
+    "32": "/images/mipmap-hdpi/ic_launcher.png",
+    "48": "/images/mipmap-xxhdpi/ic_launcher.png",
+    "128": "/images/mipmap-xxxhdpi/ic_launcher.png"
+  }
+}

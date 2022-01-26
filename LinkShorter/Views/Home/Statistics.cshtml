@@ -1,0 +1,140 @@
+﻿@model StatisticalModel
+@{
+    ViewData["Title"] = "آمار بازدید";
+}
+
+@*<h4>آمار بازدید از لینک شما</h4>*@
+
+<form method="post">
+
+    <div class="input-group">
+        <label class="input-group-text" asp-for="ShortUrl"></label>
+        <input asp-for="ShortUrl" class="form-control" />
+        <button onclick="Submit()" class="btn btn-success" type="submit">آمار بده</button>
+    </div>
+    <span asp-validation-for="ShortUrl" class="text-danger"></span>
+
+</form>
+<partial name="_Waiting" />
+
+@{
+    if (Model.ShowChart)
+    {
+        <div class="chart-container_details">
+            <b>تعداد کل بازدید ها : @Model.TotalCount</b>
+        </div>
+        <hr />
+
+        <div class="center">
+            <div class="chart-container">
+                <b> سیستم عامل</b>
+                <canvas id="OS_chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <b>مرورگر</b>
+                <canvas id="browser_chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <b>دستگاه</b>
+                <canvas id="device_chart"></canvas>
+            </div>
+
+        </div>
+
+
+
+
+        @section Scripts{
+    <script src="~/js/chart.min.js"></script>
+
+    <script>
+        var os_ctx = document.getElementById('OS_chart').getContext('2d');
+        var browser_ctx = document.getElementById('browser_chart').getContext('2d');
+        var device_ctx = document.getElementById('device_chart').getContext('2d');
+
+
+
+        var osChart = new Chart(os_ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Android', 'ioS', 'Windows'],
+                datasets: [{
+                    label: 'سیستم عامل',
+                    data: [@Model.Os.Android, @Model.Os.ioS, @Model.Os.Windows],
+                     //data: [12,9,6],
+                      backgroundColor: [
+                        'forestgreen',
+                        'purple',
+                        'orange',
+                        'crimson',
+                    ]
+                }]
+            },
+
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+         var deviceChart = new Chart(device_ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Mobile', 'Desktop', 'Tablet'],
+                datasets: [{
+                    label: 'دستگاه',
+                    data: [@Model.Device.Mobile, @Model.Device.Desktop, @Model.Device.Tablet],
+                    // data: [12,9,6],
+                      backgroundColor: [
+                        'forestgreen',
+                        'purple',
+                        'orange',
+                    ]
+                }]
+            },
+
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var browserChart = new Chart(browser_ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Chrome', 'Firefox', 'Edge','Safari'],
+                datasets: [{
+                    label: 'مرورگر',
+                    data: [@Model.Browser.Chrome, @Model.Browser.Firefox, @Model.Browser.Edge,@Model.Browser.Safari],
+                    //data: [10,20,4,7],
+                    backgroundColor: [
+                        'forestgreen',
+                        'purple',
+                        'orange',
+                        'crimson'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
+
+    }
+
+    }
+}

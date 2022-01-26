@@ -1,0 +1,64 @@
+﻿@model InputLinkModel
+@{
+    if (Model.QrCode == null)
+    {
+        <form asp-controller="home" asp-action="index" method="post">
+        <div class="text-danger" asp-validation-summary="All"></div>  
+            <div class="input-group">
+                <label class="input-group-text" asp-for="OrginalUrl"></label>
+                <input asp-for="OrginalUrl" class="form-control " style="text-align:left" />
+                <span class="input-group-text" id="basic-addon1">.http://www</span>
+            </div>
+            <span asp-validation-for="OrginalUrl" class="text-danger"></span>
+            <div class="row">
+                <div class="col-md-6 center">
+                    <div class="card">
+                        <div class="card-body">
+                            <input id="usePassword" type="checkbox" />
+                            <label for="usePassword">نیاز به پسورد دارید؟</label>
+                            <input asp-for="Password" class="form-control hide" placeholder="پسورد مورد نظر را وارد کنید" />
+
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-md-6 center">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <input id="usecustomShortLink" type="checkbox" />
+                            <label for="usecustomShortLink">لینک کوتاهی را در نظر گرفتید ؟</label>
+                            <input asp-for="ShortUrl" class="form-control hide" placeholder="عبارت مورد نظر را وارد کنید" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center m-2">
+                <button onclick="Submit()" type="submit" class="btn btn-success">تبدیل به لینک کوتاه</button>
+            </div>
+        </form>
+         <partial name="_Waiting"/>
+         
+    }
+    else
+    {
+        <div class="center">
+
+            <b class="d-none d-lg-block">لینک اصلی : </b>
+            <p  class="d-none d-lg-block">@Model.OrginalUrl</p>
+            <h3>لینک مورد نظر ایجاد شد</h3>
+            <a href="@Model.ShortUrl">
+                <b>@Model.ShortUrl</b>
+            </a>
+            <div>
+                <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.QrCode))" />
+            </div>
+            <div>
+                <a href="/">بازگشت به صفحه اصلی</a>
+            </div>
+            <hr/>
+        </div>
+    }
+
+    
+}

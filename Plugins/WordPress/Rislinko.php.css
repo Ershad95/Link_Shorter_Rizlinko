@@ -1,0 +1,10 @@
+﻿body {
+    direction:rtl;
+}
+#error{
+    text-align:right;
+}
+.center-logo {
+    text-align: center;
+    display: flex;
+}

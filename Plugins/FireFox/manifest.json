@@ -1,0 +1,27 @@
+﻿{
+
+  "manifest_version": 2,
+  "name": "Rizlinko",
+  "description": "With Rizlinko you can generate short link from long links!!",
+  "version": "1.0",
+  "homepage_url": "https://rlnk.ir",
+  "icons": {
+    "48": "icons/mipmap-mdpi/ic_launcher.png",
+    "96": "icons/hipmap-mdpi/ic_launcher.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "rizlinko@co.com"
+    }
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  //"content_security_policy": "script-src",
+  "browser_action": {
+    "default_icon": "icons/mipmap-mdpi/ic_launcher.png",
+    "default_title": "ریزلینکو",
+    "default_popup": "popup/popup.htm"
+  }
+
+}
